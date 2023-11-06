@@ -1,17 +1,15 @@
+import * as Autocomplete from "react-autocomplete";
 import * as React from "react";
-import { useState, useEffect, useContext } from "react";
 
-import { observer } from "mobx-react-lite";
-import { StoreContext } from "../../../../helpers/store";
-
-import styled from "styled-components";
-import { Container, Row, Col } from "react-awesome-styled-grid";
-
-import { titleCase, layoutFix } from "../../../../helpers/helpers";
+import { Col, Container, Row } from "react-awesome-styled-grid";
+import { layoutFix, titleCase } from "../../../../helpers/helpers";
+import { useContext, useEffect, useState } from "react";
 
 import InputMask from "react-input-mask";
-import * as Autocomplete from "react-autocomplete";
 import QuantityPicker from "./../QuantityPicker";
+import { StoreContext } from "../../../../helpers/store";
+import { observer } from "mobx-react-lite";
+import styled from "styled-components";
 
 const Root = styled.div``;
 
@@ -97,6 +95,7 @@ const CourierDeliveryForm = observer(() => {
     apartment: "",
     guestCount: 1,
     comment: "",
+    personalAgreement: true,
   });
 
   const errors = validate(values);
@@ -155,6 +154,7 @@ const CourierDeliveryForm = observer(() => {
           housing: values.housing,
           apartment: values.apartment,
         },
+        personalAgreement: values.personalAgreement,
       });
     }
   }, [values]);
@@ -351,9 +351,7 @@ const CourierDeliveryForm = observer(() => {
           </Col>
           <Col>
             <FormItem>
-              <label>
-                Квартира \ Офис:
-              </label>
+              <label>Квартира \ Офис:</label>
               <input
                 type="text"
                 placeholder=""
@@ -402,6 +400,28 @@ const CourierDeliveryForm = observer(() => {
                 }
               />
             </FormItem>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <div style={{ fontSize: "1.2em", marginTop: "15px" }}>
+              <input
+                type="checkbox"
+                id="politics"
+                onChange={(e) =>
+                  setValues({
+                    ...values,
+                    personalAgreement: e.target.checked,
+                  })
+                }
+                checked={values.personalAgreement}
+                style={{ width: "20px", display: "inline" }}
+              />
+              Нажимая на кнопку "Оформить", я даю{" "}
+              <a href="/company/consent/">
+                согласие на обработку персональных данных.
+              </a>
+            </div>
           </Col>
         </Row>
       </Container>

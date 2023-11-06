@@ -31,4 +31,5 @@ export interface IDeliveryInfo {
     housing: string;
     apartment: string;
   } | null;
+  personalAgreement: boolean;
 }

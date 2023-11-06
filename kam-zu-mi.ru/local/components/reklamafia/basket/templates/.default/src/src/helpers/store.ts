@@ -1,6 +1,7 @@
-import { makeAutoObservable, runInAction, autorun } from "mobx";
-import { createContext, useContext } from "react";
 import { IAppProps, IDeliveryInfo } from "../interfaces";
+import { autorun, makeAutoObservable, runInAction } from "mobx";
+import { createContext, useContext } from "react";
+
 import { hashCode } from "./helpers";
 import { sendTelegramMessage } from "./telegram";
 
@@ -11,6 +12,7 @@ const deliveryDefaultValue: IDeliveryInfo = {
   guestCount: 0,
   pickup: null,
   courier: null,
+  personalAgreement: true,
 };
 
 export class Store {
@@ -82,6 +84,8 @@ export class Store {
   get canMakeOrder() {
     let result = false;
 
+    if (!this.delivery?.personalAgreement) return false;
+
     if (
       this.deliveryMethod === "courier" &&
       this.delivery?.courier &&
@@ -127,6 +131,7 @@ export class Store {
       }),
     };
     this.delivery.pickup = null;
+    this.delivery.personalAgreement = props.personalAgreement;
   }
 
   preparePickupDelivery(props: IDeliveryInfo | null) {
@@ -144,6 +149,7 @@ export class Store {
       pickupPointId: props.pickup.pickupPointId,
     };
     this.delivery.courier = null;
+    this.delivery.personalAgreement = props.personalAgreement;
   }
 
   async createOrder() {
