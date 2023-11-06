@@ -1,0 +1,213 @@
+$component: 'services';
+$template: 'template-19';
+
+@mixin transition ($property, $duration) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+
+.widget.c-#{$component}.c-#{$component}-#{$template} {
+  .widget-header+.widget-content {
+    margin-top: 32px;
+  }
+
+  .widget-items {
+    padding-bottom: 1px;
+  }
+
+  .widget-item {
+    border: 1px solid #f2f2f2;
+    margin-bottom: -1px;
+  }
+
+  .widget-item-wrapper {
+    padding: 40px;
+    height: 100%;
+    border: 1px solid #f2f2f2;
+  }
+
+  .widget-item-picture-wrap {
+    width: 186px;
+    height: 116px;
+    margin-right: 40px;
+    display: block;
+  }
+
+  .widget-item-picture {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    svg {
+      display: inline-block;
+      max-width: 56px;
+      max-height: 56px;
+    }
+  }
+
+  .widget-item-name {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #404040;
+    text-decoration: none;
+  }
+
+  div + .widget-item-description {
+    margin-top: 16px;
+  }
+
+  div + .widget-item-children {
+    margin-top: 20px;
+  }
+
+  .widget-item-description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: #808080;
+  }
+
+  .widget-item-child-name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    text-decoration: none;
+  }
+
+  .widget-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 40px;
+    color: #1B1E25;
+
+    margin-bottom: 32px;
+  }
+
+  .widget-header .widget-title + .widget-description {
+    margin-top: 12px;
+  }
+
+  .widget-description {
+    color: #808080;
+  }
+
+  .widget-header-button {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: right;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #808080;
+    text-decoration: none;
+  }
+
+  .align-left {
+    text-align: left;
+  }
+  .align-center {
+    text-align: center;
+  }
+  .align-right {
+    text-align: right;
+  }
+
+  &[data-svg-file-use="true"] {
+    .widget-item-picture-wrap {
+      height: 56px;
+      width: 56px;
+    }
+  }
+
+  .widget-sections-tabs {
+    border: 1px solid #F2F2F2;
+  }
+  .widget-sections-tab {
+    padding: 20px 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #808080;
+    border-right: 3px solid transparent;
+    cursor: pointer;
+
+    @include transition((border, background, color), 0.4s);
+
+    &:hover,
+    &[data-active="true"] {
+      background: #FBFCFD;
+      color: #1B1E25;
+    }
+  }
+  .widget-sections-tab + .widget-sections-tab {
+    border-top: 1px solid #F2F2F2!important;
+  }
+
+  .widget-item-button {
+    display: block;
+    padding: 23px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #404040;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #f2f2f2;
+    margin-top: -1px;
+
+    @include transition((border, background, color), 0.4s);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  [data-role="section.content.item"] {
+    display: none;
+
+    &[data-active="true"] {
+      display: block;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .widget-item-picture-wrap {
+      width: 100%;
+      height: 0;
+      padding-top: 60%;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .widget-item-picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &[data-svg-file-use="true"] {
+      .widget-item-picture-wrap {
+        padding: 0;
+      }
+    }
+  }
+}

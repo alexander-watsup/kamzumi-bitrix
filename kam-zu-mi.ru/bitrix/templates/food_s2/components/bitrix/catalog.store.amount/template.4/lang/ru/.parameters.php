@@ -1,0 +1,5 @@
+<?php
+
+$MESS['C_CATALOG_STORE_AMOUNT_TEMPLATE_4_SCHEDULE_SHOW'] = 'Отображать график работы';
+$MESS['C_CATALOG_STORE_AMOUNT_TEMPLATE_4_PHONE_SHOW'] = 'Отображать телефон';
+$MESS['C_CATALOG_STORE_AMOUNT_TEMPLATE_4_EMAIL_SHOW'] = 'Отображать эл. почту';

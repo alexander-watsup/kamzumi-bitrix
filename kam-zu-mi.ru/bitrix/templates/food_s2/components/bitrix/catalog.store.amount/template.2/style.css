@@ -1,0 +1,177 @@
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-items {
+  position: relative;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item {
+  position: relative;
+  margin-top: -1px;
+  margin-left: -1px;
+  z-index: 1;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item:hover {
+  z-index: 2;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item:hover .store-amount-item-content {
+  border-color: #FFF;
+  -webkit-box-shadow: 0 8px 32px rgba(27, 30, 37, 0.08);
+  -moz-box-shadow: 0 8px 32px rgba(27, 30, 37, 0.08);
+  box-shadow: 0 8px 32px rgba(27, 30, 37, 0.08);
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-content {
+  height: 100%;
+  padding: 24px;
+  background-color: #FFF;
+  border: 1px solid #F2F2F2;
+  -webkit-transition-property: border-color, box-shadow;
+  -moz-transition-property: border-color, box-shadow;
+  -ms-transition-property: border-color, box-shadow;
+  -o-transition-property: border-color, box-shadow;
+  transition-property: border-color, box-shadow;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-block + .store-amount-item-block {
+  margin-top: 8px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-picture {
+  padding-top: 56.25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-picture + * {
+  margin-top: 16px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-state {
+  font-size: 0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-state-colored {
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -ms-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-state-indicator {
+  width: 4px;
+  height: 4px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -ms-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-state-value {
+  font-size: 12px;
+  line-height: 16px;
+  color: #404040;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-state-value + .store-amount-item-state-value {
+  padding-left: 4px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-title {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  max-height: 54px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-schedule {
+  font-size: 12px;
+  line-height: 16px;
+  color: #808080;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-contact-container {
+  overflow: hidden;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-contact {
+  font-size: 0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-contact-icon svg {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  max-width: 16px;
+  max-height: 100%;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-contact-icon svg path {
+  stroke: #B0B0B0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-contact-value {
+  font-size: 12px;
+  line-height: 16px;
+  color: #404040;
+  text-decoration: none;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  max-height: 16px;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -ms-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-contact-value[data-view=bold] {
+  font-weight: 600;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-description {
+  font-size: 12px;
+  line-height: 18px;
+  color: #B0B0B0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  max-height: 72px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 [data-store-state=empty] .store-amount-item-state-indicator {
+  background-color: #B0B0B0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 [data-store-state=empty] .store-amount-item-state-colored {
+  color: #B0B0B0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 [data-store-state=few] .store-amount-item-state-indicator {
+  background-color: #F4BB28;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 [data-store-state=few] .store-amount-item-state-colored {
+  color: #F4BB28;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 [data-store-state=many] .store-amount-item-state-indicator {
+  background-color: #1DB940;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 [data-store-state=many] .store-amount-item-state-colored {
+  color: #1DB940;
+}
+@media all and (max-width: 768px) {
+  .ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-2 .store-amount-item-content {
+    padding: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,4 @@
+<?php
+
+$MESS['C_NEWS_DETAIL_STAFF_DEFAULT_1_TEMPLATE_FORM_ASK_TITLE_DEFAULT'] = 'Р—Р°РґР°С‚СЊ РІРѕРїСЂРѕСЃ';
+$MESS['C_NEWS_DETAIL_STAFF_DEFAULT_1_TEMPLATE_FORM_ASK_BUTTON_TEXT_DEFAULT'] = 'РќР°РїРёСЃР°С‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ';

@@ -1,0 +1,19 @@
+.widget-item-header-over {
+	background-color: #f6bb1c!important;
+	padding: 2px 10px!important;
+	color:white!important;
+	border-radius:50px!important;
+	display:inline-block!important;
+}
+
+.ns-bitrix.c-sale-order-ajax.c-sale-order-ajax-simple-1 .form-control.bx-soa-customer-input {
+background-color:#eee!important;
+}
+
+.ns-bitrix.c-sale-order-ajax.c-sale-order-ajax-simple-1 .form-control.bx-soa-customer-textarea {
+background-color:#eee!important;
+}
+
+.ns-bitrix.c-sale-order-ajax.c-sale-order-ajax-simple-1 .soa-property-container select {
+background-color:#eee!important;
+}

@@ -1,0 +1,339 @@
+$class: 'intec-template';
+
+.#{$class} {
+  display: block;
+
+  &[data-adaptive="true"] {
+    height: 100%;
+
+    .#{$class}-layout {
+      height: 100%;
+    }
+
+    .#{$class}-layout-page {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+    }
+  }
+
+  &[data-editor="true"] {
+    .#{$class}-layout-header {
+      padding-bottom: 30px;
+    }
+
+    .#{$class}-layout-footer {
+      padding-top: 30px;
+    }
+  }
+
+  &[data-flat="both"],
+  &[data-flat="bottom"] {
+    .#{$class}-layout-page-wrapper {
+      margin-bottom: 0;
+    }
+  }
+
+  &[data-flat="both"],
+  &[data-flat="top"] {
+    .#{$class}-layout-page-wrapper {
+      margin-top: 0;
+    }
+  }
+
+  &[data-background-show="true"] {
+    .#{$class}-layout-header,
+    .#{$class}-layout-page {
+      background: #fff;
+    }
+  }
+
+  .#{$class}-layout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .#{$class}-layout-header,
+  .#{$class}-layout-page,
+  .#{$class}-layout-footer {
+    position: relative;
+    min-height: 1px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .#{$class}-layout-header-wrapper,
+  .#{$class}-layout-page-wrapper {
+    display: block;
+    position: relative;
+  }
+
+  .#{$class}-layout-header {}
+  .#{$class}-layout-header-wrapper {}
+
+  .#{$class}-layout-page {}
+
+  .#{$class}-layout-page-wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .#{$class}-layout-content {
+    display: block;
+    background: #fff;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:after {
+      content: "";
+      display: block;
+      overflow: hidden;
+      height: 0;
+    }
+  }
+
+  .#{$class}-layout-columns {
+    display: block;
+    margin: 0 -15px;
+  }
+
+  .#{$class}-layout-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+
+    margin: 0 -15px;
+  }
+
+  .#{$class}-layout-column {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    padding: 0 15px;
+
+    &.#{$class}-layout-column-adaptive {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: calc(100% - 290px);
+    }
+
+    &.#{$class}-layout-column-fixed {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: 290px;
+      max-width: none;
+    }
+  }
+
+  .#{$class}-layout-column-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .#{$class}-layout-footer {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .#{$class}-content {
+    display: block;
+    background: #fff;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:after {
+      content: "";
+      display: block;
+      overflow: hidden;
+      height: 0;
+    }
+  }
+
+  .#{$class}-content-wrapper {}
+  .#{$class}-header {}
+
+  .#{$class}-breadcrumb {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 11px;
+  }
+
+  .#{$class}-title {
+    display: block;
+    margin-top: 11px;
+    margin-bottom: 30px;
+  }
+
+  .#{$class}-page {
+    display: block;
+    margin-bottom: 50px;
+
+    &:after {
+      display: table;
+      content: "";
+      clear: both;
+    }
+
+    &.#{$class}-page-flat {
+      margin-bottom: 0;
+    }
+
+    &.#{$class}-page-narrow {
+      margin-top: 50px;
+    }
+  }
+
+  .#{$class}-page-wrapper {}
+
+  %#{$class}-part-title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #1B1E25;
+  }
+
+  %#{$class}-part-description {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.7;
+    color: #808080;
+  }
+
+  .#{$class}-part {
+    &.#{$class}-part-title {
+      @extend %#{$class}-part-title;
+    }
+
+    &.#{$class}-part-description {
+      @extend %#{$class}-part-description;
+    }
+  }
+
+  .widget {
+    .widget-header .widget-title.align-left,
+    .widget-header .widget-description.align-left,
+    .widget .widget-footer.align-left {
+      text-align: left;
+    }
+
+    .widget-header .widget-title.align-center,
+    .widget-header .widget-description.align-center,
+    .widget-footer.align-center {
+      text-align: center;
+    }
+
+    .widget-header .widget-title.align-right,
+    .widget-header .widget-description.align-right,
+    .widget-footer.align-right {
+      text-align: right;
+    }
+
+    .widget-header {
+      .widget-title {
+        @extend %#{$class}-part-title;
+
+        & + .widget-description {
+          margin-top: 16px;
+        }
+      }
+
+      .widget-description {
+        @extend %#{$class}-part-description;
+      }
+
+      & + .widget-content {
+        margin-top: 40px;
+      }
+    }
+
+    .widget-content {
+      & + .widget-pagination {
+        margin-top: 32px;
+
+        & + .widget-footer {
+          margin-top: 35px;
+        }
+      }
+      & + .widget-footer {
+        margin-top: 35px;
+      }
+    }
+  }
+
+  .#{$class}-footer {
+    display: block;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  @media all and (max-width: 720px) {
+    .#{$class}-layout-column {
+      &.#{$class}-layout-column-adaptive {
+        max-width: 100%;
+      }
+
+      &.#{$class}-layout-column-fixed {
+        display: none;
+      }
+    }
+
+    %#{$class}-part-title {
+      font-size: 22px;
+    }
+  }
+  @media all and (max-width: 500px) {
+    %#{$class}-part-title {
+      font-size: 18px;
+    }
+  }
+  @media print {
+    a {
+      &:link::after,
+      &:visited::before {
+        content: '';
+      }
+    }
+  }
+}
+
+.public .#{$class} {
+  height: 100%;
+
+  .#{$class}-content {
+    height: 100%;
+  }
+}

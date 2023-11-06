@@ -1,0 +1,284 @@
+$component: 'reviews-sender';
+$template: 'template-2';
+
+$controls: 'widget-controls';
+$form: 'widget-form';
+$item: 'widget-item';
+$notification: 'widget-notification';
+
+$color-black-1: #1B1E25;
+$color-black-2:#404040;
+$color-gray-1: #808080;
+$color-gray-2: #B0B0B0;
+$color-gray-3: #E8E8E8;
+$color-gray-4: #F2F2F2;
+$color-green: #1DB940;
+$color-green-light: #10CDA0;
+$color-red: #E05757;
+$color-yellow: #F4BB28;
+
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin user-select ($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+@mixin transition ($property, $duration) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+
+.widget.c-#{$component}.c-#{$component}-#{$template} {
+  .widget-content {
+    & + .widget-content {
+      margin-top: 24px;
+    }
+  }
+
+  .#{$controls} {
+    overflow: hidden;
+  }
+  .#{$controls}-content {
+    font-size: 0;
+    margin: -4px;
+  }
+  .#{$controls}-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 4px;
+  }
+  .#{$controls}-button {
+    white-space: nowrap;
+    padding: 11px 19px;
+    border: 1px solid;
+    background-color: #FFF;
+    @include border-radius(2px);
+    @include user-select(none);
+    @include transition(background-color, 0.4s);
+  }
+  .#{$controls}-button-part {
+    display: inline-block;
+    vertical-align: middle;
+
+    & + .#{$controls}-button-part {
+      margin-left: 12px;
+    }
+  }
+  .#{$controls}-button-icon {
+    svg {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      max-width: 16px;
+      max-height: 100%;
+
+      path {
+        @include transition(stroke, 0.4s);
+      }
+    }
+  }
+  .#{$controls}-button-text {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 10px;
+    letter-spacing: 0.1em;
+    @include transition(color, 0.4s);
+  }
+  .#{$controls}-button-active {
+    cursor: pointer;
+  }
+  .#{$controls}-button-disabled {
+    border-color: $color-gray-4;
+    cursor: not-allowed;
+
+    .#{$controls}-button-icon {
+      svg {
+        path {
+          stroke: $color-gray-2;
+        }
+      }
+    }
+    .#{$controls}-button-text {
+      color: $color-gray-2;
+    }
+  }
+  .#{$controls}-button-active:hover {
+    .#{$controls}-button-icon {
+      svg {
+        path {
+          stroke: #FFF !important;
+        }
+      }
+    }
+    .#{$controls}-button-text {
+      color: #FFF !important;
+    }
+  }
+
+  .#{$notification} {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .#{$notification}-success {
+    color: $color-green;
+  }
+  .#{$notification}-error {
+    margin-top: 24px;
+    color: $color-red;
+  }
+
+  .#{$form} {
+    max-width: 600px;
+    overflow: hidden;
+
+    &[data-expanded='false'] {
+      display: none;
+    }
+    form {
+      padding-top: 24px;
+    }
+    textarea {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 120px;
+    }
+  }
+  .#{$form}-consent {
+    font-size: 0;
+    margin-top: 11px;
+    overflow: hidden;
+  }
+  .#{$form}-consent-content {
+    margin-top: -2px;
+    margin-bottom: -2px;
+  }
+  .#{$form}-captcha {
+    display: inline-block;
+    font-size: 0;
+  }
+  .#{$form}-captcha-field {
+    max-width: 180px;
+  }
+  .#{$form}-captcha-picture {
+    margin-bottom: 8px;
+  }
+  .#{$form}-buttons {
+    margin-top: 24px;
+    overflow: hidden;
+  }
+  .#{$form}-buttons-content {
+    font-size: 0;
+    margin: -4px;
+  }
+  .#{$form}-button {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 10px;
+    letter-spacing: 0.1em;
+    vertical-align: middle;
+    padding: 14px 19px;
+    margin: 4px;
+    border: 1px solid;
+    background-color: #FFF;
+    outline: none;
+    @include border-radius(2px);
+    @include user-select(none);
+    @include transition(#{color, background-color}, 0.4s);
+
+    &:hover {
+      color: #FFF !important;
+    }
+  }
+
+  .#{$item} {
+    border: 1px solid $color-gray-4;
+    background-color: #FFF;
+
+    &:first-child {
+      -webkit-border-top-left-radius: 2px;
+      -moz-border-radius-topleft: 2px;
+      border-top-left-radius: 2px;
+      -webkit-border-top-right-radius: 2px;
+      -moz-border-radius-topright: 2px;
+      border-top-right-radius: 2px;
+    }
+    &:last-child {
+      -webkit-border-bottom-left-radius: 2px;
+      -moz-border-radius-bottomleft: 2px;
+      border-bottom-left-radius: 2px;
+      -webkit-border-bottom-right-radius: 2px;
+      -moz-border-radius-bottomright: 2px;
+      border-bottom-right-radius: 2px;
+    }
+    & + .#{$item} {
+      margin-top: -1px;
+    }
+  }
+  .#{$item}-content {
+    margin: 30px 30px 40px 30px;
+    overflow: hidden;
+  }
+  .#{$item}-content-empty {
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-gray-1;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .#{$item}-picture {
+    font-size: 0;
+    text-align: center;
+    width: 64px;
+    height: 64px;
+    background-color: $color-gray-4;
+    @include border-radius(50%);
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+
+      path {
+        stroke: $color-gray-2;
+      }
+    }
+  }
+  .#{$item}-name {
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-black-2;
+  }
+  .#{$item}-description {
+    font-size: 13px;
+    line-height: 20px;
+    color: $color-gray-1;
+    margin-top: 4px;
+  }
+  .#{$item}-date {
+    font-size: 10px;
+    line-height: 14px;
+    color: $color-gray-1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 16px;
+  }
+
+  @media all and (max-width: 500px) {
+    .#{$item}-content {
+      margin: 24px 24px 32px 24px;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+$namespace: 'bitrix';
+$component: 'catalog-store-amount';
+$template: 'template-3';
+$class: 'store-amount';
+$item: #{$class}-item;
+
+$color-black-1: #1B1E25;
+$color-black-2:#404040;
+$color-gray-1: #808080;
+$color-gray-2: #B0B0B0;
+$color-gray-3: #E8E8E8;
+$color-gray-4: #F2F2F2;
+
+$state-many: #1DB940;
+$state-few: #F4BB28;
+$state-empty: #B0B0B0;
+
+@mixin webkit-box ($lines, $line-height) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+  max-height: #{$lines * $line-height}px;
+}
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin transition ($property, $duration) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+
+.ns-#{$namespace}.c-#{$component}.c-#{$component}-#{$template} {
+  .#{$item}-container {
+    overflow: hidden;
+
+    & + .#{$item}-container {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid $color-gray-4;
+    }
+  }
+  .#{$item} {
+    font-size: 0;
+    margin: -4px;
+  }
+  .#{$item}-block {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 4px;
+  }
+  .#{$item}-state-indicator {
+    width: 4px;
+    height: 4px;
+    @include border-radius(50%);
+    @include transition(background-color, 0.4s);
+  }
+  .#{$item}-state-colored {
+    @include transition(color, 0.4s);
+  }
+  .#{$item}-state-value {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-black-2;
+
+    & + .#{$item}-state-value {
+      padding-left: 4px;
+    }
+  }
+  .#{$item}-title {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-gray-2;
+  }
+  .#{$item}-contact {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-black-2;
+    text-decoration: none;
+    @include transition(color, 0.4s);
+  }
+
+  [data-store-state='many'] {
+    .#{$item}-state-indicator {
+      background-color: $state-many;
+    }
+    .#{$item}-state-colored {
+      color: $state-many;
+    }
+  }
+  [data-store-state='few'] {
+    .#{$item}-state-indicator {
+      background-color: $state-few;
+    }
+    .#{$item}-state-colored {
+      color: $state-few;
+    }
+  }
+  [data-store-state='empty'] {
+    .#{$item}-state-indicator {
+      background-color: $state-empty;
+    }
+    .#{$item}-state-colored {
+      color: $state-empty;
+    }
+  }
+}

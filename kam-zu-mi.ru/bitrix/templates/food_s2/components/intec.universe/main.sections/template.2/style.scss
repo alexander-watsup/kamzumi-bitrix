@@ -1,0 +1,127 @@
+$component: 'sections';
+$template: 'template-2';
+
+@mixin transition($time, $property) {
+  -webkit-transition: $property $time;
+  -moz-transition: $property $time;
+  -ms-transition: $property $time;
+  -o-transition: $property $time;
+  transition: $property $time;
+}
+
+.widget.c-#{$component}.c-#{$component}-#{$template} {
+  .widget-element {
+    padding-right: 30px;
+    padding-bottom: 30px;
+
+    &[data-picture-size="big"] {
+      .widget-element-picture {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+  .widget-element-wrap {
+    overflow: hidden;
+  }
+
+  .widget-element-picture {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .widget-element-text {
+    padding-left: 25px;
+    overflow: hidden;
+  }
+
+  .widget-element-name {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #222222;
+
+    @include transition(0.4s, null);
+  }
+
+  .widget-element-section {
+    padding-top: 10px;
+    margin: -3px -7px;
+  }
+
+  .widget-element-section-element {
+    font-size: 13px;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 3px 7px;
+  }
+
+  .widget-element-section-name {
+    text-decoration: none;
+    color: #666666;
+    @include transition(0.4s, null);
+  }
+
+  .widget-element-section-count {
+    color: #222222;
+  }
+
+  .intec-grid-item-2 {
+    .widget-element-section {
+      font-size: 0;
+    }
+
+    .widget-element-section-element {
+      display: inline-block;
+    }
+  }
+
+  @media all and (max-width: 1000px) {
+    .intec-grid-item-2 .widget-element-section-element {
+      display: block;
+    }
+
+    &[data-picture-size="big"] {
+      .widget-element-picture {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    &[data-picture-size="big"] {
+      .widget-element-picture {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  @media all and (max-width: 550px) {
+    .widget-element {
+      padding-right: 0;
+    }
+
+    .widget-element-section {
+      font-size: 0;
+    }
+
+    .widget-element-section-element {
+      display: inline-block !important;
+      margin-right: 15px;
+      line-height: 25px;
+    }
+  }
+}

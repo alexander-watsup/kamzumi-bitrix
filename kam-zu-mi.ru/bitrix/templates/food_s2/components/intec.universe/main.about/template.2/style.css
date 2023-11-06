@@ -1,0 +1,146 @@
+.widget.c-about.c-about-template-1 {
+  position: relative;
+}
+.widget.c-about.c-about-template-1 .widget-item-title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #B0B0B0;
+  margin-bottom: 16px;
+}
+.widget.c-about.c-about-template-1 .widget-item-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 40px;
+  color: #1B1E25;
+}
+.widget.c-about.c-about-template-1 .widget-item-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #808080;
+  margin-top: 16px;
+}
+.widget.c-about.c-about-template-1 .widget-item-picture-wrap {
+  width: 40%;
+}
+.widget.c-about.c-about-template-1 .widget-item-picture {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  padding-top: 100%;
+}
+.widget.c-about.c-about-template-1 .widget-item-button {
+  margin-top: 32px;
+}
+.widget.c-about.c-about-template-1 .widget-item-decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  text-align: center;
+  font-size: 0;
+}
+.widget.c-about.c-about-template-1 .widget-item-decoration-icon-wrap {
+  opacity: 1;
+  cursor: pointer;
+  width: 25%;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -ms-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.widget.c-about.c-about-template-1 .widget-item-decoration-icon-wrap:hover {
+  opacity: 0.95;
+}
+.widget.c-about.c-about-template-1 .widget-item-advantages {
+  margin-top: 26px;
+}
+.widget.c-about.c-about-template-1 .widget-item-advantages-picture {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 48px;
+  width: 48px;
+}
+.widget.c-about.c-about-template-1 .widget-item-advantages-picture svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.widget.c-about.c-about-template-1 .widget-item-advantages-name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #404040;
+}
+.widget.c-about.c-about-template-1 .widget-item-advantages-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #808080;
+  margin-top: 8px;
+}
+.widget.c-about.c-about-template-1[data-view="1"] .widget-item-picture-wrap {
+  float: left;
+  position: relative;
+}
+.widget.c-about.c-about-template-1[data-view="1"] .widget-item-picture-wrap + div .widget-item-text {
+  padding-left: 40%;
+  margin-left: 40px;
+}
+.widget.c-about.c-about-template-1[data-view="1"] .widget-item-advantages-wrap {
+  padding-left: 40%;
+  margin-left: 40px;
+}
+@media all and (max-width: 768px) {
+  .widget.c-about.c-about-template-1[data-view="1"] .widget-item-picture-wrap + div .widget-item-text {
+    padding-left: 40%;
+    margin-left: 40px;
+  }
+  .widget.c-about.c-about-template-1[data-view="1"] .widget-item-advantages-wrap {
+    padding-left: 0;
+    margin-left: 0;
+    clear: both;
+    margin-top: 40px;
+  }
+}
+@media all and (max-width: 650px) {
+  .widget.c-about.c-about-template-1[data-view="1"] .widget-item-picture-wrap {
+    float: none;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .widget.c-about.c-about-template-1[data-view="1"] .widget-item-picture-wrap + div .widget-item-text {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+@media all and (max-width: 400px) {
+  .widget.c-about.c-about-template-1[data-view="1"] .widget-item-picture-wrap {
+    width: 100%;
+  }
+}
+.widget.c-about.c-about-template-1[data-view="2"] .widget-item-description {
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

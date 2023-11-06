@@ -1,0 +1,111 @@
+$component: 'reviews';
+$template: 'template-19';
+$item: 'widget-item';
+
+@mixin transition ($value...) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.widget.c-#{$component}.c-#{$component}-#{$template} {
+  .widget-link-all {
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #808080;
+  }
+  .widget-description {
+    margin-top: 15px;
+  }
+  .widget-items {
+    margin-bottom: 15px;
+    padding: 0 100px;
+  }
+  .widget-item {
+    margin-bottom: 40px;
+  }
+  .widget-item-wrapper {
+    padding: 0;
+  }
+  .widget-item-content {
+    padding: 45px 30px;
+    background: #FBFCFD;
+    border: 1px solid #F2F2F2;
+    border-radius: 2px;
+  }
+
+  .#{$item}-image {
+    display: block;
+    width: 96px;
+    height: 96px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include border-radius(50%);
+  }
+  .#{$item}-description {
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #808080;
+  }
+
+  .#{$item}-name {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 20px;
+    color: #404040;
+    text-decoration: none;
+    @include transition(color 0.4s);
+  }
+  .#{$item}-rating-wrap {
+    margin-top: 8px;
+  }
+  .#{$item}-rating {
+    color: #dddddd;
+
+    &-active {
+      color: #FBCD56;
+    }
+  }
+  .#{$item}-link-detail-button {
+    padding: 10px 15px !important;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @media all and (max-width: 950px) {
+    .widget-items {
+      padding: 0;
+    }
+  }
+
+  @media all and (max-width: 600px) {
+    .#{$item}-image {
+      width: 64px;
+      height: 64px;
+    }
+    .#{$item}-content {
+      padding: 20px;
+    }
+  }
+  @media all and (max-width: 450px) {
+    .#{$item}-content-wrap {
+      order: 2;
+    }
+  }
+}

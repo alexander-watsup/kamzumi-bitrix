@@ -1,0 +1,122 @@
+$namespace: 'intec-seo';
+$component: 'filter-tags';
+$template: 'default';
+$class: #{$component};
+
+.ns-#{$namespace}.c-#{$component}.c-#{$component}-#{$template} {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  overflow: hidden;
+
+  .#{$class}-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    margin: -3px;
+    overflow: hidden;
+    max-height: 64px;
+  }
+
+  .#{$class}-item {
+    position: relative;
+    min-height: 1px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    padding: 3px;
+
+    &[data-active="true"] {
+      .#{$class}-item-name {
+        background-color: #f6f6f6;
+      }
+    }
+  }
+
+  .#{$class}-item-name {
+    display: block;
+    padding: 4px 12px;
+    border-radius: 3px;
+    background-color: #fdfdfd;
+    color: #606060;
+    text-decoration: none;
+
+    -webkit-transition: background-color 350ms;
+    -moz-transition: background-color 350ms;
+    -ms-transition: background-color 350ms;
+    -o-transition: background-color 350ms;
+    transition: background-color 350ms;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+      background-color: #f6f6f6;
+    }
+  }
+
+  .#{$class}-buttons {
+    display: none;
+    margin: 10px 10px 0 10px;
+  }
+
+  .#{$class}-button {
+    border-bottom: 1px dotted #0065ff;
+    text-decoration: none;
+
+    &[data-action="collapse"] {
+      display: none;
+    }
+  }
+
+  &[data-initialized="true"] {
+    .#{$class}-items {
+      max-height: none;
+    }
+  }
+
+  &[data-expandable="true"] {
+    .#{$class}-buttons {
+      display: block;
+    }
+  }
+
+  &[data-expanded="true"] {
+    .#{$class}-button {
+      &[data-action="expand"] {
+        display: none;
+      }
+
+      &[data-action="collapse"] {
+        display: inline;
+      }
+    }
+  }
+}

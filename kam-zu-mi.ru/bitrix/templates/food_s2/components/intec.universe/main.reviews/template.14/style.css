@@ -1,0 +1,207 @@
+@keyframes c-reviews-template-18-keyframes {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+.widget.c-reviews.c-reviews-template-18 .widget-link-all {
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #808080;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-header .widget-description {
+  margin-top: 15px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-content {
+  padding-left: 20px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-picture {
+  display: block;
+  font-size: 0;
+  text-align: center;
+  margin-right: 55px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: box-shadow 0.4s;
+  -moz-transition: box-shadow 0.4s;
+  -ms-transition: box-shadow 0.4s;
+  -o-transition: box-shadow 0.4s;
+  transition: box-shadow 0.4s;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-picture[data-role=video] {
+  cursor: pointer;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-picture-icon {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  vertical-align: middle;
+  pointer-events: none;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-picture-icon-path-white {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-description {
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #808080;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-name {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+  color: #404040;
+  text-decoration: none;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -ms-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-rating-wrap {
+  margin-top: 8px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-rating {
+  color: #dddddd;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-rating-active {
+  color: #FBCD56;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-link-detail-button {
+  padding: 10px 15px !important;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-wrapper:hover .widget-item-picture-icon {
+  animation-name: c-reviews-template-18-keyframes;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+.widget.c-reviews.c-reviews-template-18 .intec-ui-control-dots {
+  padding-top: 35px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-footer-button {
+  color: #2d2d2d !important;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-footer-button:hover, .widget.c-reviews.c-reviews-template-18 .widget-footer-button:focus, .widget.c-reviews.c-reviews-template-18 .widget-footer-button:active {
+  color: #fff !important;
+}
+.widget.c-reviews.c-reviews-template-18 [data-slider=false] .widget-item-wrapper:hover .widget-item-picture {
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+.widget.c-reviews.c-reviews-template-18 .widget-item-picture {
+  width: 590px;
+  max-width: 100%;
+  height: 330px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap {
+  margin-top: 30px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-items-dots {
+  position: relative;
+  margin: -15px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-items-dot {
+  padding: 15px;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-dot-picture-wrap {
+  border: 2px solid;
+  -webkit-transition: border-color 0.4s;
+  -moz-transition: border-color 0.4s;
+  -ms-transition: border-color 0.4s;
+  -o-transition: border-color 0.4s;
+  transition: border-color 0.4s;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-items-dot:not(.active) .widget-dot-picture-wrap {
+  border-color: transparent !important;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-item-picture {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 55%;
+  margin: 0 !important;
+}
+.widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-item-picture-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+  vertical-align: middle;
+  pointer-events: none;
+}
+@media all and (max-width: 1060px) {
+  .widget.c-reviews.c-reviews-template-18 .widget-item-picture {
+    height: 300px;
+  }
+}
+@media all and (max-width: 768px) {
+  .widget.c-reviews.c-reviews-template-18 .widget-item-content {
+    padding-left: 0;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-items-dots {
+    position: relative;
+    margin: -10px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-items-dot {
+    padding: 10px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-item-picture-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
+    margin-top: -15px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-item-picture {
+    width: 320px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-item-picture-icon {
+    width: 54px;
+    height: 54px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-item-text {
+    text-align: center;
+  }
+}
+@media all and (max-width: 550px) {
+  .widget.c-reviews.c-reviews-template-18 .widget-item-description {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-items-dots {
+    position: relative;
+    margin: -5px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-items-dot {
+    padding: 5px;
+  }
+  .widget.c-reviews.c-reviews-template-18 .widget-items-dots-wrap .widget-item-picture-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

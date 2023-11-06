@@ -1,0 +1,119 @@
+$component: 'widget';
+$template: 'form-6';
+
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin transition ($property, $duration) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+
+.widget.c-#{$component}.c-#{$component}-#{$template} {
+  position: relative;
+  z-index: 0;
+
+  .widget-form {
+  }
+
+  .widget-form[data-borders=rounded] {
+    border-radius: 10px;
+  }
+
+  .widget-form-wrapper-2 {
+    position: relative;
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .widget-form-title-wrap {}
+
+  .widget-form-image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 56px;
+    height: 56px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 24px;
+  }
+
+  .widget-form-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    white-space: normal;
+    color: #fff;
+    max-width: 200px;
+  }
+
+  .widget-form-description-wrap {}
+
+  .widget-form-description {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    white-space: normal;
+    color: #fff;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .widget-form-button-wrap {}
+
+  .widget-form-button {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1B1E25;
+    display: inline-block;
+    padding: 15px 30px;
+    background: #fff;
+    cursor: pointer;
+
+    @include transition ((background, color), 350ms);
+    @include border-radius (2px);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    .widget-form-title {
+      max-width: initial;
+    }
+
+    .widget-form-title-wrap,
+    .widget-form-description-wrap,
+    .widget-form-button-wrap,
+    .widget-form-description {
+      text-align: center;
+    }
+
+    .widget-form-title-wrap + .widget-form-description-wrap,
+    .widget-form-description-wrap + .widget-form-button-wrap,
+    .widget-form-title-wrap + .widget-form-button-wrap {
+      margin-top: 20px;
+    }
+  }
+}

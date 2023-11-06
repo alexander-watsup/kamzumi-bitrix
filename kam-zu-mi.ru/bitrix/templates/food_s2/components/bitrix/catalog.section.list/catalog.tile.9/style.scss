@@ -1,0 +1,84 @@
+$namespace: 'bitrix';
+$component: 'catalog-section-list';
+$template: 'catalog-tile-7';
+$class: #{$component};
+$item: #{$class}-item;
+
+$black-text: #404040;
+$gray-text-light: #B0B0B0;
+
+@mixin transition($property, $duration) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+.ns-#{$namespace}.c-#{$component}.c-#{$component}-#{$template} {
+  padding-top: 1px;
+
+  .#{$item} {
+    margin-top: -1px;
+    margin-left: -1px;
+    border: 1px solid #F2F2F2;
+    @include transition(box-shadow, 0.4s);
+
+    &:hover {
+      box-shadow: 0px 8px 32px rgba(27, 30, 37, 0.08);
+    }
+  }
+  .#{$item}-wrapper {
+    font-size: 0;
+    margin: 24px;
+  }
+  .#{$item}-picture {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin-right: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .#{$item}-name {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: $black-text;
+    text-decoration: none;
+    @include transition(color, 0.4s);
+  }
+  .#{$item}-count {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: $gray-text-light;
+    margin-top: 8px;
+  }
+
+  @media all and (max-width: 768px) {
+    .#{$item}-wrapper {
+      margin: 12px;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item-container + .store-amount-item-container {
+  margin-top: 8px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item {
+  font-size: 0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item-block + .store-amount-item-block {
+  margin-top: 4px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item-state-indicator {
+  width: 4px;
+  height: 4px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -ms-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item-state-colored {
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -ms-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -ms-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item-state-value {
+  font-size: 12px;
+  line-height: 16px;
+  color: #404040;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item-state-value + .store-amount-item-state-value {
+  padding-left: 4px;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 .store-amount-item-title {
+  font-size: 12px;
+  line-height: 16px;
+  color: #B0B0B0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 [data-store-state=many] .store-amount-item-state-indicator {
+  background-color: #1DB940;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 [data-store-state=many] .store-amount-item-state-colored {
+  color: #1DB940;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 [data-store-state=few] .store-amount-item-state-indicator {
+  background-color: #F4BB28;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 [data-store-state=few] .store-amount-item-state-colored {
+  color: #F4BB28;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 [data-store-state=empty] .store-amount-item-state-indicator {
+  background-color: #B0B0B0;
+}
+.ns-bitrix.c-catalog-store-amount.c-catalog-store-amount-template-1 [data-store-state=empty] .store-amount-item-state-colored {
+  color: #B0B0B0;
+}
+
+/*# sourceMappingURL=style.css.map */

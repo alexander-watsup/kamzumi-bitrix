@@ -1,0 +1,3 @@
+ <?
+
+$MESS["REKLAMAFIA_IIKO_ADMIN_MENU_TITLE"] = "Обмен IIKO";

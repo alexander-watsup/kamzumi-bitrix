@@ -1,0 +1,190 @@
+$namespace: 'bitrix';
+$component: 'catalog-store-amount';
+$template: 'template-2';
+$class: 'store-amount';
+$item: #{$class}-item;
+
+$color-black-1: #1B1E25;
+$color-black-2:#404040;
+$color-gray-1: #808080;
+$color-gray-2: #B0B0B0;
+$color-gray-3: #E8E8E8;
+$color-gray-4: #F2F2F2;
+
+$state-many: #1DB940;
+$state-few: #F4BB28;
+$state-empty: #B0B0B0;
+
+@mixin background-position () {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@mixin webkit-box ($lines, $line-height) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+  max-height: #{$lines * $line-height}px;
+}
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin transition ($property, $duration) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+
+.ns-#{$namespace}.c-#{$component}.c-#{$component}-#{$template} {
+  .#{$class}-items {
+    position: relative;
+  }
+  .#{$item} {
+    position: relative;
+    margin-top: -1px;
+    margin-left: -1px;
+    z-index: 1;
+
+    &:hover {
+      z-index: 2;
+
+      .#{$item}-content {
+        border-color: #FFF;
+        -webkit-box-shadow: 0 8px 32px rgba(27, 30, 37, 0.08);
+        -moz-box-shadow: 0 8px 32px rgba(27, 30, 37, 0.08);
+        box-shadow: 0 8px 32px rgba(27, 30, 37, 0.08);
+      }
+    }
+  }
+  .#{$item}-content {
+    height: 100%;
+    padding: 24px;
+    background-color: #FFF;
+    border: 1px solid $color-gray-4;
+    @include transition(#{border-color, box-shadow}, 0.4s);
+  }
+  .#{$item}-block {
+    & + .#{$item}-block {
+      margin-top: 8px;
+    }
+  }
+  .#{$item}-picture {
+    padding-top: #{100% / 16 * 9};
+    @include background-position();
+
+    & + * {
+      margin-top: 16px;
+    }
+  }
+  .#{$item}-state {
+    font-size: 0;
+  }
+  .#{$item}-state-colored {
+    @include transition(color, 0.4s);
+  }
+  .#{$item}-state-indicator {
+    width: 4px;
+    height: 4px;
+    @include border-radius(50%);
+    @include transition(background-color, 0.4s);
+  }
+  .#{$item}-state-value {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-black-2;
+
+    & + .#{$item}-state-value {
+      padding-left: 4px;
+    }
+  }
+  .#{$item}-title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    @include webkit-box(3, 18);
+  }
+  .#{$item}-schedule {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-gray-1;
+  }
+  .#{$item}-contact-container {
+    overflow: hidden;
+  }
+  .#{$item}-contact {
+    font-size: 0;
+  }
+  .#{$item}-contact-icon {
+    svg {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      max-width: 16px;
+      max-height: 100%;
+
+      path {
+        stroke: $color-gray-2;
+      }
+    }
+  }
+  .#{$item}-contact-value {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-black-2;
+    text-decoration: none;
+    word-break: break-all;
+    @include webkit-box(1, 16);
+    @include transition(color, 0.4s);
+
+    &[data-view='bold'] {
+      font-weight: 600;
+    }
+  }
+  .#{$item}-description {
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-gray-2;
+    @include webkit-box(4, 18);
+  }
+
+  [data-store-state='empty'] {
+    .#{$item}-state-indicator {
+      background-color: $state-empty;
+    }
+    .#{$item}-state-colored {
+      color: $state-empty;
+    }
+  }
+  [data-store-state='few'] {
+    .#{$item}-state-indicator {
+      background-color: $state-few;
+    }
+    .#{$item}-state-colored {
+      color: $state-few;
+    }
+  }
+  [data-store-state='many'] {
+    .#{$item}-state-indicator {
+      background-color: $state-many;
+    }
+    .#{$item}-state-colored {
+      color: $state-many;
+    }
+  }
+  
+  @media all and (max-width: 768px) {
+    .#{$item}-content {
+      padding: 20px;
+    }
+  }
+}

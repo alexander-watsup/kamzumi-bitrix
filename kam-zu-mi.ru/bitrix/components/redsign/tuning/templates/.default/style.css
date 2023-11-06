@@ -1,0 +1,1217 @@
+/*
+$secondary-color: #70aa70 !default;
+$secondary-color: #ff5500 !default;
+
+$main-font-size: 13px;
+
+$header-bg-color: $secondary-color;
+
+$main-border: 1px solid #e6e6e6;
+
+$sidebar-tab-text-color: #000;
+$sidebar-tab-text-color-active: $secondary-color;
+
+$sidebar-menu-text-color: #555555;
+$sidebar-menu-text-color-active: #555555;
+
+$option-name: #414243 !default;
+$option-title-color: #444c7a;
+$svg-color: #636363 !default;
+
+$input-background: #fff !default;
+
+$input-disabled-color: rgba(0,0,0, .42) !default;
+$input-disabled-solid-color: #949494 !default;
+$input-border: 1px solid #d2d2d2 !default;
+$input-border-hover: 1px solid $header-bg-color !default;
+
+$radio-fill-color: $secondary-color !default;
+$radio-empty-color: #5a5a5a !default;
+$radio-border: 2px solid $radio-fill-color !default;
+
+$switch-bg-color: $secondary-color !default;
+$switch-checked-lever-bg: desaturate(lighten($switch-bg-color, 25%), 25%) !default;
+$switch-unchecked-bg: #F1F1F1 !default;
+$switch-unchecked-lever-bg: rgba(0,0,0,.38) !default;
+$switch-radius: 15px !default;
+
+$spinner-default-color: $secondary-color !default;
+*/
+/* line 4, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+.rstuning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #202020;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  transition: opacity 0.3s ease-out;
+  z-index: 10010;
+  opacity: 0; }
+  /* line 21, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning:not(.open) {
+    will-change: opacity;
+    opacity: 0; }
+  /* line 26, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning.loading .rstuning__loader {
+    display: block; }
+  /* line 30, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning * {
+    box-sizing: border-box;
+    color: #202020; }
+    /* line 34, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+    .rstuning *:focus {
+      outline: none; }
+  /* line 39, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning input,
+  .rstuning button,
+  .rstuning select,
+  .rstuning textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    transition: all 0.3s linear; }
+  /* line 49, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning a {
+    color: #202020; }
+    /* line 52, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+    .rstuning a.active, .rstuning a:hover, .rstuning a:focus, .rstuning a:active {
+      color: #ff5500; }
+  /* line 60, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning label {
+    font-weight: 300;
+    margin-bottom: 0; }
+  /* line 65, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning svg {
+    overflow: hidden;
+    vertical-align: middle; }
+  /* line 70, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning-enabled {
+    position: static; }
+  /* line 74, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning.rstuning__loaded {
+    opacity: 1; }
+  /* line 78, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning__form {
+    position: static; }
+  /* line 82, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning__body {
+    position: static; }
+  /* line 86, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning__button__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px; }
+  /* line 95, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+  .rstuning__option {
+    margin-bottom: 24px; }
+    @media (max-width: 767px) {
+      /* line 95, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+      .rstuning__option {
+        margin-bottom: 14px; } }
+    /* line 102, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+    .rstuning__option-opname {
+      font-size: 24px;
+      font-weight: 500;
+      margin: 0 0 19px; }
+      @media (max-width: 767px) {
+        /* line 102, source/style/sass/components/redsign/tuning/templates/.default/style.scss */
+        .rstuning__option-opname {
+          font-size: 20px;
+          margin-bottom: 10px; } }
+
+/* line 2, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+.rstuning .mod-text-center {
+  text-align: center; }
+
+/* line 6, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+.rstuning .mod-text-right {
+  text-align: right; }
+
+/* line 10, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+.rstuning .mod-text-left {
+  text-align: center; }
+
+@media (min-width: 578px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-sm-center {
+    text-align: center; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-sm-right {
+    text-align: right; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-sm-left {
+    text-align: center; } }
+
+@media (min-width: 768px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-md-center {
+    text-align: center; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-md-right {
+    text-align: right; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-md-left {
+    text-align: center; } }
+
+@media (min-width: 993px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-lg-center {
+    text-align: center; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-lg-right {
+    text-align: right; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-lg-left {
+    text-align: center; } }
+
+@media (min-width: 1200px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-xl-center {
+    text-align: center; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-xl-right {
+    text-align: right; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_text-util.scss */
+  .rstuning .mod-text-xl-left {
+    text-align: center; } }
+
+/* line 2, source/style/sass/components/redsign/tuning/templates/.default/_visible-util.scss */
+.rstuning .mod-dnone {
+  display: none; }
+  @media (max-width: 577px) {
+    /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_visible-util.scss */
+    .rstuning .mod-dnone-sm {
+      display: none; } }
+  @media (min-width: 768px) and (max-width: 992px) {
+    /* line 12, source/style/sass/components/redsign/tuning/templates/.default/_visible-util.scss */
+    .rstuning .mod-dnone-md {
+      display: none; } }
+  @media (min-width: 993px) and (max-width: 1199px) {
+    /* line 18, source/style/sass/components/redsign/tuning/templates/.default/_visible-util.scss */
+    .rstuning .mod-dnone-lg {
+      display: none; } }
+  @media (min-width: 1200px) {
+    /* line 24, source/style/sass/components/redsign/tuning/templates/.default/_visible-util.scss */
+    .rstuning .mod-dnone-xl {
+      display: none; } }
+
+/* line 2, source/style/sass/components/redsign/tuning/templates/.default/_main-overlay.scss */
+.rstuning.open .rstuning__overlay {
+  opacity: 1; }
+
+/* line 6, source/style/sass/components/redsign/tuning/templates/.default/_main-overlay.scss */
+.rstuning.closed .rstuning__overlay {
+  display: none;
+  pointer-events: none; }
+
+/* line 11, source/style/sass/components/redsign/tuning/templates/.default/_main-overlay.scss */
+.rstuning__overlay {
+  backface-visibility: hidden;
+  will-change: opacity;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  z-index: 10005;
+  pointer-events: auto; }
+
+/* line 49, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px; }
+
+/* line 57, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-1, .rstuning-col-2, .rstuning-col-3, .rstuning-col-4, .rstuning-col-6, .rstuning-col-7, .rstuning-col-8, .rstuning-col-9, .rstuning-col-10, .rstuning-col-11, .rstuning-col-12 {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+/* line 2, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-1 {
+  width: 8.33333%; }
+
+/* line 6, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-2 {
+  width: 16.66667%; }
+
+/* line 10, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-3 {
+  width: 25%; }
+
+/* line 14, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-4 {
+  width: 33.3333%; }
+
+/* line 18, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-6 {
+  width: 50%; }
+
+/* line 22, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-7 {
+  width: 58.33333%; }
+
+/* line 26, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-8 {
+  width: 66.66667%; }
+
+/* line 30, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-9 {
+  width: 75%; }
+
+/* line 34, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-10 {
+  width: 83.33333%; }
+
+/* line 38, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-11 {
+  width: 91.66667%; }
+
+/* line 42, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning-col-12 {
+  width: 100%; }
+
+@media (min-width: 578px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-1 {
+    width: 8.33333%; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-2 {
+    width: 16.66667%; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-3 {
+    width: 25%; }
+  /* line 14, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-4 {
+    width: 33.3333%; }
+  /* line 18, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-6 {
+    width: 50%; }
+  /* line 22, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-7 {
+    width: 58.33333%; }
+  /* line 26, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-8 {
+    width: 66.66667%; }
+  /* line 30, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-9 {
+    width: 75%; }
+  /* line 34, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-10 {
+    width: 83.33333%; }
+  /* line 38, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-11 {
+    width: 91.66667%; }
+  /* line 42, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-sm-12 {
+    width: 100%; } }
+
+@media (min-width: 768px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-1 {
+    width: 8.33333%; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-2 {
+    width: 16.66667%; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-3 {
+    width: 25%; }
+  /* line 14, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-4 {
+    width: 33.3333%; }
+  /* line 18, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-6 {
+    width: 50%; }
+  /* line 22, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-7 {
+    width: 58.33333%; }
+  /* line 26, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-8 {
+    width: 66.66667%; }
+  /* line 30, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-9 {
+    width: 75%; }
+  /* line 34, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-10 {
+    width: 83.33333%; }
+  /* line 38, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-11 {
+    width: 91.66667%; }
+  /* line 42, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-md-12 {
+    width: 100%; } }
+
+@media (min-width: 993px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-1 {
+    width: 8.33333%; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-2 {
+    width: 16.66667%; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-3 {
+    width: 25%; }
+  /* line 14, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-4 {
+    width: 33.3333%; }
+  /* line 18, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-6 {
+    width: 50%; }
+  /* line 22, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-7 {
+    width: 58.33333%; }
+  /* line 26, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-8 {
+    width: 66.66667%; }
+  /* line 30, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-9 {
+    width: 75%; }
+  /* line 34, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-10 {
+    width: 83.33333%; }
+  /* line 38, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-11 {
+    width: 91.66667%; }
+  /* line 42, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-lg-12 {
+    width: 100%; } }
+
+@media (min-width: 1200px) {
+  /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-1 {
+    width: 8.33333%; }
+  /* line 6, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-2 {
+    width: 16.66667%; }
+  /* line 10, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-3 {
+    width: 25%; }
+  /* line 14, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-4 {
+    width: 33.3333%; }
+  /* line 18, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-6 {
+    width: 50%; }
+  /* line 22, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-7 {
+    width: 58.33333%; }
+  /* line 26, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-8 {
+    width: 66.66667%; }
+  /* line 30, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-9 {
+    width: 75%; }
+  /* line 34, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-10 {
+    width: 83.33333%; }
+  /* line 38, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-11 {
+    width: 91.66667%; }
+  /* line 42, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+  .rstuning-col-xl-12 {
+    width: 100%; } }
+
+/* line 89, source/style/sass/components/redsign/tuning/templates/.default/_grid.scss */
+.rstuning .mod-align-items-center {
+  align-items: center; }
+
+/* line 2, source/style/sass/components/redsign/tuning/templates/.default/_scroll.scss */
+.rstuning__scroll {
+  position: absolute;
+  top: 100px;
+  right: 4px;
+  left: 4px;
+  bottom: 4px;
+  padding: 0 30px;
+  overflow-y: auto;
+  overflow-x: hidden; }
+  /* line 3, source/style/sass/mixin/_scroll.scss */
+  .rstuning__scroll::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    background-image: none;
+    background-repeat: no-repeat; }
+  /* line 10, source/style/sass/mixin/_scroll.scss */
+  .rstuning__scroll::-webkit-scrollbar-track {
+    background-color: #fff; }
+  /* line 14, source/style/sass/mixin/_scroll.scss */
+  .rstuning__scroll::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #7a879a; }
+  /* line 19, source/style/sass/mixin/_scroll.scss */
+  .rstuning__scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #7a879a; }
+  /* line 23, source/style/sass/mixin/_scroll.scss */
+  .rstuning__scroll::-webkit-resizer {
+    width: 4px;
+    height: 0;
+    background-image: none;
+    background-repeat: no-repeat; }
+  /* line 30, source/style/sass/mixin/_scroll.scss */
+  .rstuning__scroll::-webkit-scrollbar {
+    width: 4px; }
+  @media (max-width: 577px) {
+    /* line 2, source/style/sass/components/redsign/tuning/templates/.default/_scroll.scss */
+    .rstuning__scroll {
+      top: 66px;
+      padding: 0 15px; } }
+
+@media (max-width: 772px) {
+  /* line 21, source/style/sass/components/redsign/tuning/templates/.default/_scroll.scss */
+  .rstuning__scroll {
+    overflow-y: scroll; } }
+
+/* line 3, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+.rstuning__tabs__nav {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  counter-reset: list 0; }
+
+/* line 11, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+.rstuning__tabs__item:first-of-type .rstuning__tabs__link {
+  padding-top: 15px; }
+
+/* line 15, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+.rstuning__tabs__link {
+  display: block;
+  font-weight: 500;
+  padding: 22px 35px; }
+  @media (max-width: 992px) {
+    /* line 15, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+    .rstuning__tabs__link {
+      padding: 18px 35px; } }
+  @media (max-width: 767px) {
+    /* line 15, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+    .rstuning__tabs__link {
+      padding: 12px 10px; } }
+  /* line 29, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+  .rstuning__tabs__link.mod-default > span {
+    color: #0084bb; }
+  /* line 34, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+  .rstuning__tabs__link.active, .rstuning__tabs__link:hover {
+    text-decoration: none; }
+    /* line 38, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+    .rstuning__tabs__link.active > span, .rstuning__tabs__link:hover > span {
+      color: #ff5500; }
+
+/* line 44, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+.rstuning__tabs__pane {
+  display: none;
+  padding: 0 28px; }
+  /* line 48, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+  .rstuning__tabs__pane.active {
+    display: block; }
+  @media (max-width: 992px) {
+    /* line 44, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+    .rstuning__tabs__pane {
+      padding: 0 14px; } }
+  @media (max-width: 767px) {
+    /* line 44, source/style/sass/components/redsign/tuning/templates/.default/_tabs.scss */
+    .rstuning__tabs__pane {
+      padding: 0; } }
+
+/*
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+/**************************/
+/* STYLES FOR THE SPINNER */
+/**************************/
+/*
+ * Constants:
+ *      STROKEWIDTH = 3px
+ *      ARCSIZE     = 270 degrees (amount of circle the arc takes up)
+ *      ARCTIME     = 1333ms (time it takes to expand and contract arc)
+ *      ARCSTARTROT = 216 degrees (how much the start location of the arc
+ *                                should rotate each time, 216 gives us a
+ *                                5 pointed star shape (it's 360/5 * 3).
+ *                                For a 7 pointed star, we might do
+ *                                360/7 * 3 = 154.286)
+ *      CONTAINERWIDTH = 28px
+ *      SHRINK_TIME = 400ms
+ */
+/* line 29, source/style/sass/lib/materializecss/components/_preloader.scss */
+.rstuning {
+  /**
+ * IMPORTANT NOTE ABOUT CSS ANIMATION PROPERTIES (keanulee):
+ *
+ * iOS Safari (tested on iOS 8.1) does not handle animation-delay very well - it doesn't
+ * guarantee that the animation will start _exactly_ after that value. So we avoid using
+ * animation-delay and instead set custom keyframes for each color (as redundant as it
+ * seems).
+ *
+ * We write out each animation in full (instead of separating animation-name,
+ * animation-duration, etc.) because under the polyfill, Safari does not recognize those
+ * specific properties properly, treats them as -webkit-animation, and overrides the
+ * other animation rules. See https://github.com/Polymer/platform/issues/53.
+ */
+  /**
+ * Patch the gap that appear between the two adjacent div.circle-clipper while the
+ * spinner is rotating (appears on Chrome 38, Safari 7.1, and IE 11).
+ */ }
+  /* line 31, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .preloader-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px; }
+    /* line 37, source/style/sass/lib/materializecss/components/_preloader.scss */
+    .rstuning .preloader-wrapper.small {
+      width: 36px;
+      height: 36px; }
+    /* line 42, source/style/sass/lib/materializecss/components/_preloader.scss */
+    .rstuning .preloader-wrapper.big {
+      width: 64px;
+      height: 64px; }
+    /* line 47, source/style/sass/lib/materializecss/components/_preloader.scss */
+    .rstuning .preloader-wrapper.active {
+      /* duration: 360 * ARCTIME / (ARCSTARTROT + (360-ARCSIZE)) */
+      -webkit-animation: container-rotate 1568ms linear infinite;
+      animation: container-rotate 1568ms linear infinite; }
+
+@-webkit-keyframes container-rotate {
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes container-rotate {
+  to {
+    transform: rotate(360deg); } }
+  /* line 62, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .spinner-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-color: #ff5500; }
+  /* line 70, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .spinner-blue,
+  .rstuning .spinner-blue-only {
+    border-color: #4285f4; }
+  /* line 75, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .spinner-red,
+  .rstuning .spinner-red-only {
+    border-color: #db4437; }
+  /* line 80, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .spinner-yellow,
+  .rstuning .spinner-yellow-only {
+    border-color: #f4b400; }
+  /* line 85, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .spinner-green,
+  .rstuning .spinner-green-only {
+    border-color: #0f9d58; }
+  /* line 103, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .active .spinner-layer.spinner-blue {
+    /* durations: 4 * ARCTIME */
+    -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, blue-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, blue-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+  /* line 109, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .active .spinner-layer.spinner-red {
+    /* durations: 4 * ARCTIME */
+    -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+  /* line 115, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .active .spinner-layer.spinner-yellow {
+    /* durations: 4 * ARCTIME */
+    -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, yellow-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, yellow-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+  /* line 121, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .active .spinner-layer.spinner-green {
+    /* durations: 4 * ARCTIME */
+    -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, green-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, green-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+  /* line 127, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .active .spinner-layer,
+  .rstuning .active .spinner-layer.spinner-blue-only,
+  .rstuning .active .spinner-layer.spinner-red-only,
+  .rstuning .active .spinner-layer.spinner-yellow-only,
+  .rstuning .active .spinner-layer.spinner-green-only {
+    /* durations: 4 * ARCTIME */
+    opacity: 1;
+    -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+
+@-webkit-keyframes fill-unfill-rotate {
+  12.5% {
+    -webkit-transform: rotate(135deg); }
+  /* 0.5 * ARCSIZE */
+  25% {
+    -webkit-transform: rotate(270deg); }
+  /* 1   * ARCSIZE */
+  37.5% {
+    -webkit-transform: rotate(405deg); }
+  /* 1.5 * ARCSIZE */
+  50% {
+    -webkit-transform: rotate(540deg); }
+  /* 2   * ARCSIZE */
+  62.5% {
+    -webkit-transform: rotate(675deg); }
+  /* 2.5 * ARCSIZE */
+  75% {
+    -webkit-transform: rotate(810deg); }
+  /* 3   * ARCSIZE */
+  87.5% {
+    -webkit-transform: rotate(945deg); }
+  /* 3.5 * ARCSIZE */
+  to {
+    -webkit-transform: rotate(1080deg); }
+  /* 4   * ARCSIZE */ }
+
+@keyframes fill-unfill-rotate {
+  12.5% {
+    transform: rotate(135deg); }
+  /* 0.5 * ARCSIZE */
+  25% {
+    transform: rotate(270deg); }
+  /* 1   * ARCSIZE */
+  37.5% {
+    transform: rotate(405deg); }
+  /* 1.5 * ARCSIZE */
+  50% {
+    transform: rotate(540deg); }
+  /* 2   * ARCSIZE */
+  62.5% {
+    transform: rotate(675deg); }
+  /* 2.5 * ARCSIZE */
+  75% {
+    transform: rotate(810deg); }
+  /* 3   * ARCSIZE */
+  87.5% {
+    transform: rotate(945deg); }
+  /* 3.5 * ARCSIZE */
+  to {
+    transform: rotate(1080deg); }
+  /* 4   * ARCSIZE */ }
+
+@-webkit-keyframes blue-fade-in-out {
+  from {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  26% {
+    opacity: 0; }
+  89% {
+    opacity: 0; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+
+@keyframes blue-fade-in-out {
+  from {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  26% {
+    opacity: 0; }
+  89% {
+    opacity: 0; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes red-fade-in-out {
+  from {
+    opacity: 0; }
+  15% {
+    opacity: 0; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  51% {
+    opacity: 0; } }
+
+@keyframes red-fade-in-out {
+  from {
+    opacity: 0; }
+  15% {
+    opacity: 0; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  51% {
+    opacity: 0; } }
+
+@-webkit-keyframes yellow-fade-in-out {
+  from {
+    opacity: 0; }
+  40% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 1; }
+  76% {
+    opacity: 0; } }
+
+@keyframes yellow-fade-in-out {
+  from {
+    opacity: 0; }
+  40% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 1; }
+  76% {
+    opacity: 0; } }
+
+@-webkit-keyframes green-fade-in-out {
+  from {
+    opacity: 0; }
+  65% {
+    opacity: 0; }
+  75% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes green-fade-in-out {
+  from {
+    opacity: 0; }
+  65% {
+    opacity: 0; }
+  75% {
+    opacity: 1; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+  /* line 230, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .gap-patch {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+    border-color: inherit; }
+  /* line 240, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .gap-patch .circle {
+    width: 1000%;
+    left: -450%; }
+  /* line 245, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .circle-clipper {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-color: inherit; }
+    /* line 253, source/style/sass/lib/materializecss/components/_preloader.scss */
+    .rstuning .circle-clipper .circle {
+      width: 200%;
+      height: 100%;
+      border-width: 3px;
+      /* STROKEWIDTH */
+      border-style: solid;
+      border-color: inherit;
+      border-bottom-color: transparent !important;
+      border-radius: 50%;
+      -webkit-animation: none;
+      animation: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0; }
+    /* line 269, source/style/sass/lib/materializecss/components/_preloader.scss */
+    .rstuning .circle-clipper.left .circle {
+      left: 0;
+      border-right-color: transparent !important;
+      -webkit-transform: rotate(129deg);
+      transform: rotate(129deg); }
+    /* line 275, source/style/sass/lib/materializecss/components/_preloader.scss */
+    .rstuning .circle-clipper.right .circle {
+      left: -100%;
+      border-left-color: transparent !important;
+      -webkit-transform: rotate(-129deg);
+      transform: rotate(-129deg); }
+  /* line 285, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .active .circle-clipper.left .circle {
+    /* duration: ARCTIME */
+    -webkit-animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+    animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+  /* line 291, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning .active .circle-clipper.right .circle {
+    /* duration: ARCTIME */
+    -webkit-animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+    animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both; }
+
+@-webkit-keyframes left-spin {
+  from {
+    -webkit-transform: rotate(130deg); }
+  50% {
+    -webkit-transform: rotate(-5deg); }
+  to {
+    -webkit-transform: rotate(130deg); } }
+
+@keyframes left-spin {
+  from {
+    transform: rotate(130deg); }
+  50% {
+    transform: rotate(-5deg); }
+  to {
+    transform: rotate(130deg); } }
+
+@-webkit-keyframes right-spin {
+  from {
+    -webkit-transform: rotate(-130deg); }
+  50% {
+    -webkit-transform: rotate(5deg); }
+  to {
+    -webkit-transform: rotate(-130deg); } }
+
+@keyframes right-spin {
+  from {
+    transform: rotate(-130deg); }
+  50% {
+    transform: rotate(5deg); }
+  to {
+    transform: rotate(-130deg); } }
+  /* line 321, source/style/sass/lib/materializecss/components/_preloader.scss */
+  .rstuning #spinnerContainer.cooldown {
+    /* duration: SHRINK_TIME */
+    -webkit-animation: container-rotate 1568ms linear infinite, fade-out 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation: container-rotate 1568ms linear infinite, fade-out 400ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes fade-out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+/* line 4, source/style/sass/components/redsign/tuning/templates/.default/_preloader.scss */
+.rstuning__preloader {
+  will-change: opacity;
+  position: absolute;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1065px;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+  z-index: 10050; }
+  /* line 19, source/style/sass/components/redsign/tuning/templates/.default/_preloader.scss */
+  .rstuning__preloader svg {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+    fill: #000; }
+  /* line 28, source/style/sass/components/redsign/tuning/templates/.default/_preloader.scss */
+  .rstuning__preloader > div {
+    position: absolute;
+    top: 50%;
+    margin-top: -80px; }
+
+/* line 36, source/style/sass/components/redsign/tuning/templates/.default/_preloader.scss */
+.rstuning.loading .rstuning__preloader {
+  display: block;
+  opacity: 1; }
+
+/* line 12, source/style/sass/components/redsign/tuning/templates/.default/_openbutton.scss */
+.rstuning__open-button {
+  will-change: transform;
+  position: absolute;
+  top: 160px;
+  right: 0;
+  transition: transform 0.3s linear;
+  transform: translateX(25px); }
+  /* line 20, source/style/sass/components/redsign/tuning/templates/.default/_openbutton.scss */
+  .rstuning__open-button__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 64px;
+    height: 64px;
+    background: #1b1f23;
+    border-radius: 50%;
+    animation: rstuning-waves 2s linear infinite;
+    transition: border-radius 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035), width 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), background 0.3s cubic-bezier(0.95, 0.05, 0.795, 0.035), height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); }
+    /* line 36, source/style/sass/components/redsign/tuning/templates/.default/_openbutton.scss */
+    .rstuning__open-button__link:hover svg {
+      animation-play-state: running; }
+    /* line 41, source/style/sass/components/redsign/tuning/templates/.default/_openbutton.scss */
+    .rstuning__open-button__link svg {
+      will-change: transform;
+      position: relative;
+      top: 15px;
+      left: 17px;
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+      animation-name: rstuning-spin;
+      animation-duration: 4000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-play-state: paused; }
+
+@keyframes rstuning-waves {
+  0% {
+    box-shadow: 0 0 1px 0px rgba(151, 205, 253, 0.7), 0 0 1px 0px #bfe0fe; }
+  33% {
+    box-shadow: 0 0 1px 10px rgba(151, 205, 253, 0.35), 0 0 1px 0px rgba(191, 224, 254, 0.7); }
+  66% {
+    box-shadow: 0 0 1px 20px rgba(151, 205, 253, 0), 0 0 1px 10px rgba(191, 224, 254, 0.35); }
+  100% {
+    box-shadow: 0 0 1px 0px rgba(151, 205, 253, 0), 0 0 1px 20px rgba(191, 224, 254, 0); } }
+
+@keyframes rstuning-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+/* line 8, source/style/sass/components/redsign/tuning/templates/.default/_closebutton.scss */
+.rstuning__close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 66px;
+  height: 66px; }
+  /* line 15, source/style/sass/components/redsign/tuning/templates/.default/_closebutton.scss */
+  .rstuning__close-button__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 66px;
+    height: 66px; }
+    /* line 23, source/style/sass/components/redsign/tuning/templates/.default/_closebutton.scss */
+    .rstuning__close-button__link svg {
+      position: absolute;
+      top: 23px;
+      left: 23px;
+      width: 20px;
+      height: 20px;
+      fill: #ff5500; }
+
+/* line 3, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+.rstuning__hamburger {
+  backface-visibility: hidden;
+  padding: 18px 23px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  /* line 22, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+  .rstuning__hamburger:hover {
+    opacity: 1; }
+  /* line 27, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+  .rstuning__hamburger.is-active:hover {
+    opacity: 1; }
+  /* line 31, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+  .rstuning__hamburger.is-active .rstuning__hamburger-inner,
+  .rstuning__hamburger.is-active .rstuning__hamburger-inner::before,
+  .rstuning__hamburger.is-active .rstuning__hamburger-inner::after {
+    background-color: #ff5500; }
+  /* line 38, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+  .rstuning__hamburger-box {
+    backface-visibility: hidden;
+    width: 24px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+    margin-top: 2px; }
+  /* line 47, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+  .rstuning__hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -1px; }
+    /* line 52, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+    .rstuning__hamburger-inner, .rstuning__hamburger-inner:before, .rstuning__hamburger-inner:after {
+      backface-visibility: hidden;
+      width: 24px;
+      height: 2px;
+      background-color: #ff5500;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease; }
+    /* line 66, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+    .rstuning__hamburger-inner:before, .rstuning__hamburger-inner:after {
+      content: "";
+      display: block; }
+    /* line 72, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+    .rstuning__hamburger-inner::before {
+      top: -8px; }
+    /* line 76, source/style/sass/components/redsign/tuning/templates/.default/_hamburger.scss */
+    .rstuning__hamburger-inner::after {
+      bottom: -8px; }
+
+/* line 7, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+.rstuning:not(.mod-tabs) .rstuning__sidebar {
+  display: none; }
+
+@media (min-width: 1066px) {
+  /* line 13, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+  .rstuning.open .rstuning__sidebar {
+    transform: translateX(0); } }
+
+@media (max-width: 1065px) {
+  /* line 19, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+  .rstuning.open.open-sidebar .rstuning__sidebar {
+    transform: translateX(0); } }
+
+/* line 25, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+.rstuning__sidebar {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 415px;
+  background-color: #fff;
+  border-right: 1px solid #dde3e7;
+  transition: transform 0.3s linear;
+  transform: translateX(-100%);
+  z-index: 10030; }
+  @media (max-width: 1065px) {
+    /* line 25, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+    .rstuning__sidebar {
+      box-shadow: 0 10px 32px 0 rgba(84, 133, 169, 0.3);
+      transform: translateX(-103%); } }
+  @media (max-width: 415px) {
+    /* line 25, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+    .rstuning__sidebar {
+      box-shadow: none; } }
+  /* line 48, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+  .rstuning__sidebar__back-button {
+    display: none; }
+    @media (max-width: 1065px) {
+      /* line 48, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+      .rstuning__sidebar__back-button {
+        display: block; } }
+    /* line 57, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+    .rstuning__sidebar__back-button .rstuning__hamburger-inner:before {
+      top: -5px;
+      transform: translate3d(-4.8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+    /* line 62, source/style/sass/components/redsign/tuning/templates/.default/_sidebar.scss */
+    .rstuning__sidebar__back-button .rstuning__hamburger-inner:after {
+      bottom: -5px;
+      transform: translate3d(-4.8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+
+/* line 5, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+.rstuning.open:not(.mod-tabs) .rstuning__content {
+  transform: translateX(0); }
+  @media (max-width: 1065px) {
+    /* line 5, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+    .rstuning.open:not(.mod-tabs) .rstuning__content {
+      transform: translateX(0); } }
+
+/* line 16, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+.rstuning.open .rstuning__content {
+  transform: translateX(415px); }
+  @media (max-width: 1065px) {
+    /* line 16, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+    .rstuning.open .rstuning__content {
+      width: 100%;
+      transform: translateX(0); } }
+
+/* line 25, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+.rstuning__content {
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 650px;
+  height: 100%;
+  background-color: #fff;
+  transition: transform 0.3s linear;
+  transform: translateX(-100%);
+  box-shadow: 0 10px 32px 0 rgba(84, 133, 169, 0.3);
+  z-index: 10020; }
+  /* line 39, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+  .rstuning__content-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background: transparent;
+    backface-visibility: hidden;
+    z-index: 10030; }
+    /* line 50, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+    .rstuning__content-overlay.open {
+      display: block; }
+  /* line 55, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+  .rstuning__content__toggle-sidedebar {
+    display: none; }
+    @media (max-width: 1065px) {
+      /* line 55, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+      .rstuning__content__toggle-sidedebar {
+        display: block; } }
+    /* line 63, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+    .rstuning__content__toggle-sidedebar .rstuning__hamburger-inner {
+      top: 1px;
+      transition-duration: 0.275s;
+      transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      /* line 68, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+      .rstuning__content__toggle-sidedebar .rstuning__hamburger-inner:before {
+        top: 8px;
+        transition: opacity 0.125s 0.275s ease; }
+      /* line 73, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+      .rstuning__content__toggle-sidedebar .rstuning__hamburger-inner:after {
+        top: 16px;
+        transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    /* line 81, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+    .rstuning__content__toggle-sidedebar .rstuning__hamburger.is-active .rstuning__hamburger-inner {
+      transform: translate3d(0, 8px, 0) rotate(135deg);
+      transition-delay: 0.075s; }
+      /* line 87, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+      .rstuning__content__toggle-sidedebar .rstuning__hamburger.is-active .rstuning__hamburger-inner:before {
+        transition-delay: 0s;
+        opacity: 0; }
+      /* line 92, source/style/sass/components/redsign/tuning/templates/.default/_content.scss */
+      .rstuning__content__toggle-sidedebar .rstuning__hamburger.is-active .rstuning__hamburger-inner:after {
+        transform: translate3d(0, -16px, 0) rotate(-270deg);
+        transition-delay: 0.075s; }

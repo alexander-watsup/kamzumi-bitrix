@@ -1,0 +1,134 @@
+$namespace: 'bitrix';
+$component: 'catalog-section-list';
+$template: 'catalog-slider-1';
+$class: #{$component};
+$item: #{$class}-item;
+
+$black-header: #1B1E25;
+$black-text: #404040;
+$gray-text-light: #B0B0B0;
+$gray-text-dark: #808080;
+
+@mixin transition($property, $duration) {
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -ms-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+.ns-#{$namespace}.c-#{$component}.c-#{$component}-#{$template} {
+  .intec-ui {
+    &.intec-ui-control-navigation {
+      position: absolute;
+      top: 0;
+      right: -24px;
+      bottom: 0;
+      left: -24px;
+    }
+
+    &.intec-ui-control-dots {
+      padding-top: 10px;
+    }
+  }
+
+  .#{$item} {
+    overflow: hidden;
+  }
+  .#{$item}-wrapper {
+    font-size: 0;
+    margin: 30px 20px;
+  }
+  .#{$item}-picture-wrap {
+    text-align: center;
+  }
+  .#{$item}-picture {
+    display: block;
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .#{$item}-name-wrap {
+    text-align: center;
+    margin-top: 24px;
+  }
+  .#{$item}-name {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: $black-text;
+    text-decoration: none;
+    @include transition(color, 0.4s);
+  }
+
+  [data-picture-size='cover'] {
+    background-size: cover;
+  }
+  [data-picture-size='contain'] {
+    background-size: contain;
+  }
+
+  &[data-picture-size="medium"] {
+    .#{$item}-picture {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  &[data-picture-size="small"] {
+    .#{$item}-picture {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &[data-slider="true"] {
+    &[data-slider-navigation="true"] {
+      .#{$item}s {
+
+        @media all and (max-width: 1200px) {
+          margin: 0 24px;
+          margin-top: -25px;
+          width: auto;
+        }
+      }
+    }
+
+    &[data-slider-dots="true"] {
+      .intec-ui {
+        &.intec-ui-control-navigation {
+          bottom: 30px;
+
+          @media all and (max-width: 500px) {
+            bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
